@@ -69,7 +69,7 @@ $ cd moveit
 ```shell
 $ npm install # Install all dependencies
 $ npm run build # Generate the production build
-$ npm run start # Initiate the project at http://localhost:3333/
+$ npm run start # Initiate the project at http://localhost:3000/
 ```
 
 # :pencil2: Todo
