@@ -45,7 +45,7 @@
 # :rocket: About the project
 <b>Move.it</b> is a pomodoro timer app with gamification made with Next.js for those whom spend a lot of time in computer.
 
-* <b><a href="#">Demo</a></b> (coming soon)
+* <b><a href="https://moveit-plum.vercel.app/">Demo</a></b>
 
 # :man_technologist: Technologies
 
