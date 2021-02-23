@@ -1,6 +1,19 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  button {
+    width: 100%;
+    height: 5rem;
+
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`
+
+export const CountDownContainer = styled.div`
   display: flex;
   align-items: center;
   font-family: Rajdhani;
@@ -36,7 +49,3 @@ export const Container = styled.div`
     margin: 0 0.5rem;
   }
 `
-
-export const MinutesContainer = styled.div``
-
-export const SecondsContainer = styled.div``

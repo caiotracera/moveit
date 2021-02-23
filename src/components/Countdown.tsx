@@ -1,21 +1,21 @@
-import {
-  Container,
-  MinutesContainer,
-  SecondsContainer
-} from '../styles/components/Countdown'
+import { Container, CountDownContainer } from '../styles/components/Countdown'
 
 export function Countdown() {
   return (
     <Container>
-      <MinutesContainer>
-        <span>2</span>
-        <span>5</span>
-      </MinutesContainer>
-      <span>:</span>
-      <SecondsContainer>
-        <span>0</span>
-        <span>0</span>
-      </SecondsContainer>
+      <CountDownContainer>
+        <div>
+          <span>2</span>
+          <span>5</span>
+        </div>
+        <span>:</span>
+        <div>
+          <span>0</span>
+          <span>0</span>
+        </div>
+      </CountDownContainer>
+
+      <button type="button">Iniciar um ciclo</button>
     </Container>
   )
 }
