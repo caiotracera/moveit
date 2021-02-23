@@ -10,6 +10,20 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--blue);
+    color: var(--white);
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: var(--blue-dark);
+    }
   }
 `
 
