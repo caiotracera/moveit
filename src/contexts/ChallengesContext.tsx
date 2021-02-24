@@ -12,6 +12,7 @@ type ChallengeContextData = {
   level: number
   currentExperience: number
   challengesCompleted: number
+  experienceToNextLevel: number
   activeChallenge: Challenge
   levelUp: () => void
   startNewChallenge: () => void
@@ -29,6 +30,8 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
   const [currentExperience, setCurrentExperience] = useState(0)
   const [challengesCompleted, setChallengesCompleted] = useState(0)
   const [activeChallenge, setActiveChallenge] = useState(null)
+
+  const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
   function levelUp() {
     setLevel(level + 1)
@@ -48,6 +51,7 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
       value={{
         level,
         currentExperience,
+        experienceToNextLevel,
         challengesCompleted,
         levelUp,
         startNewChallenge,
