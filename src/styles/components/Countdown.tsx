@@ -21,8 +21,24 @@ export const Container = styled.div`
     font-weight: 600;
     transition: background-color 0.2s;
 
-    &:hover {
+    &:disabled {
+      background: var(--white);
+      color: var(--text);
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
       background: var(--blue-dark);
+    }
+
+    &.countdownButtonActive {
+      background-color: var(--white);
+      color: var(--title);
+
+      &:not(:disabled):hover {
+        background: var(--red);
+        color: var(--white);
+      }
     }
   }
 `
