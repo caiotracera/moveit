@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ChallengesContext } from '../contexts/ChallengesContext'
+
 import {
   ChallengeActive,
   ChallengeNotActive,
@@ -6,22 +9,20 @@ import {
 
 import LevelUp from '../assets/icons/level-up.svg'
 import BodyIcon from '../assets/icons/body.svg'
+import EyeIcon from '../assets/icons/eye.svg'
 
 export function ChallengeBox() {
-  const hasActiveChallenge = true
+  const { activeChallenge } = useContext(ChallengesContext)
 
   return (
     <Container>
-      {hasActiveChallenge ? (
+      {activeChallenge ? (
         <ChallengeActive>
-          <header>Ganhe 400 xp</header>
+          <header>Ganhe {activeChallenge.amount} xp</header>
           <main>
-            <BodyIcon />
+            {activeChallenge.type === 'body' ? <BodyIcon /> : <EyeIcon />}
             <strong>Exercite-se</strong>
-            <p>
-              É agora Caião, bora lá meu parça. Caminhe por 3 minutos e estique
-              suas pernas pra você ficar saudável.
-            </p>
+            <p>{activeChallenge.description}</p>
           </main>
 
           <footer>
