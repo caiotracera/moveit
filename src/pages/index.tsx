@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import { ChallengeBox } from '../components/ChallengeBox'
 
+import { CountdownProvider } from '../contexts/CountdownContext'
+
+import { ChallengeBox } from '../components/ChallengeBox'
 import { CompletedChallenges } from '../components/CompletedChallenges'
 import { Countdown } from '../components/Countdown'
 import { ExperienceBar } from '../components/ExperienceBar'
@@ -15,16 +17,18 @@ const Home: React.FC = () => {
         <title>Início - Move.it</title>
       </Head>
       <ExperienceBar />
-      <Container>
-        <LeftContainer>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </LeftContainer>
-        <RightContainer>
-          <ChallengeBox></ChallengeBox>
-        </RightContainer>
-      </Container>
+      <CountdownProvider>
+        <Container>
+          <LeftContainer>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </LeftContainer>
+          <RightContainer>
+            <ChallengeBox></ChallengeBox>
+          </RightContainer>
+        </Container>
+      </CountdownProvider>
     </div>
   )
 }
