@@ -12,7 +12,9 @@ import BodyIcon from '../assets/icons/body.svg'
 import EyeIcon from '../assets/icons/eye.svg'
 
 export function ChallengeBox() {
-  const { activeChallenge, resetChallenge } = useContext(ChallengesContext)
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(
+    ChallengesContext
+  )
 
   return (
     <Container>
@@ -33,7 +35,11 @@ export function ChallengeBox() {
             >
               Falhei
             </button>
-            <button type="button" className="challengeSucceededButton">
+            <button
+              type="button"
+              className="challengeSucceededButton"
+              onClick={completeChallenge}
+            >
               Completei
             </button>
           </footer>
