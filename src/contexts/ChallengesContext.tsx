@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 
 import challenges from '../assets/data/challenges.json'
 
@@ -40,7 +40,18 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
 
   function startNewChallenge() {
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
-    setActiveChallenge(challenges[randomChallengeIndex] as Challenge)
+    const challenge = challenges[randomChallengeIndex] as Challenge
+
+    new Audio('/notification.mp3').play()
+
+    if (Notification.permission === 'granted') {
+      new Notification('Novo desafio! 🎉', {
+        body: `Valendo ${challenge.amount} xp!`,
+        icon: '/favicon.png'
+      })
+    }
+
+    setActiveChallenge(challenge)
   }
 
   function resetChallenge() {
@@ -64,6 +75,10 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     setActiveChallenge(null)
     setChallengesCompleted(challengesCompleted + 1)
   }
+
+  useEffect(() => {
+    Notification.requestPermission()
+  }, [])
 
   return (
     <ChallengesContext.Provider
