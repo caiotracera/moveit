@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useState } from 'react'
 
 import challenges from '../assets/data/challenges.json'
-import { CompletedChallenges } from '../components/CompletedChallenges'
 
 type Challenge = {
   type: 'body' | 'eye'
