@@ -18,7 +18,7 @@ type HomeProps = {
   challengesCompleted: number
 }
 
-const Home: React.FC = (props: HomeProps) => {
+export default function Home(props: HomeProps) {
   return (
     <ChallengesProvider
       level={props.level}
@@ -58,5 +58,3 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     }
   }
 }
-
-export default Home
