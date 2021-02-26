@@ -20,7 +20,7 @@ type ChallengeContextData = {
   startNewChallenge: () => void
   resetChallenge: () => void
   completeChallenge: () => void
-  setIsLevelModalOpen: (boolean) => void
+  closeLevelUpModal: () => void
 }
 
 type ChallengesProviderProps = {
@@ -90,6 +90,10 @@ export function ChallengesProvider({
     setChallengesCompleted(challengesCompleted + 1)
   }
 
+  function closeLevelUpModal() {
+    setIsLevelModalOpen(false)
+  }
+
   useEffect(() => {
     Notification.requestPermission()
   }, [])
@@ -112,7 +116,7 @@ export function ChallengesProvider({
         activeChallenge,
         resetChallenge,
         completeChallenge,
-        setIsLevelModalOpen
+        closeLevelUpModal
       }}
     >
       {children}

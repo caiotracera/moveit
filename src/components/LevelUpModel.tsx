@@ -6,7 +6,7 @@ import CloseIcon from '../assets/icons/close.svg'
 import { Container, Overlay } from '../styles/components/LevelUpModal'
 
 export function LevelUpModal() {
-  const { level, setIsLevelModalOpen } = useContext(ChallengesContext)
+  const { level, closeLevelUpModal } = useContext(ChallengesContext)
 
   return (
     <Overlay>
@@ -16,7 +16,7 @@ export function LevelUpModal() {
         <strong>Parabéns</strong>
         <p>Você alcançou um novo level</p>
 
-        <button type="button" onClick={() => setIsLevelModalOpen(false)}>
+        <button type="button" onClick={() => closeLevelUpModal()}>
           <CloseIcon />
         </button>
       </Container>
