@@ -45,7 +45,8 @@
 # :rocket: About the project
 <b>Move.it</b> is a pomodoro timer app with gamification made with Next.js for those whom spend a lot of time in computer.
 
-* <b><a href="https://moveit-plum.vercel.app/">Demo</a></b>
+* <b><a href="https://moveit-plum.vercel.app/" target="_blank">Demo</a></b>
+* <a href="https://www.figma.com/file/KrsGUQla6fTQuOflaP8gav/Move.it-2.0-Caio-Tracera?node-id=160%3A2761" target="_blank">Layout</a>
 
 # :man_technologist: Technologies
 
@@ -73,6 +74,14 @@ $ npm run start # Initiate the project at http://localhost:3000/
 ```
 
 # :pencil2: Todo
+- [ ] Make layout responsive
+- [ ] Add PWA
+- [ ] Make a dark mode
+- [ ] Login using Github OAuth
+- [ ] Timer under "Encerrar ciclo" button
+- [ ] Leaderboard
+- [ ] "Falhei" and "Completei" buttons
+- [ ] Share in twitter button and image
 
 # :memo: License
 
