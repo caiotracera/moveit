@@ -20,6 +20,7 @@ type ChallengeContextData = {
   startNewChallenge: () => void
   resetChallenge: () => void
   completeChallenge: () => void
+  setIsLevelModalOpen: (boolean) => void
 }
 
 type ChallengesProviderProps = {
@@ -42,11 +43,13 @@ export function ChallengesProvider({
     userInfo.challengesCompleted ?? 0
   )
   const [activeChallenge, setActiveChallenge] = useState<Challenge>(null)
+  const [isLevelModalOpen, setIsLevelModalOpen] = useState(false)
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
   function levelUp() {
     setLevel(level + 1)
+    setIsLevelModalOpen(true)
   }
 
   function startNewChallenge() {
@@ -108,12 +111,12 @@ export function ChallengesProvider({
         startNewChallenge,
         activeChallenge,
         resetChallenge,
-        completeChallenge
+        completeChallenge,
+        setIsLevelModalOpen
       }}
     >
       {children}
-
-      <LevelUpModal />
+      {isLevelModalOpen && <LevelUpModal />}
     </ChallengesContext.Provider>
   )
 }
