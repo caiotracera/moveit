@@ -1,22 +1,32 @@
 import { useContext } from 'react'
+import { FaTwitter } from 'react-icons/fa'
+
 import { ChallengesContext } from '../contexts/ChallengesContext'
 
 import CloseIcon from '../assets/icons/close.svg'
-
-import { Container, Overlay } from '../styles/components/LevelUpModal'
-
+import { Container, Content, Overlay } from '../styles/components/LevelUpModal'
 export function LevelUpModal() {
   const { level, closeLevelUpModal } = useContext(ChallengesContext)
 
   return (
     <Overlay>
       <Container>
-        <header>{level}</header>
+        <Content>
+          <header>{level}</header>
 
-        <strong>Parabéns</strong>
-        <p>Você alcançou um novo level</p>
+          <strong>Parabéns</strong>
+          <p>Você alcançou um novo level</p>
+        </Content>
 
-        <button type="button" onClick={() => closeLevelUpModal()}>
+        <button type="button" onClick={() => {}} id="twitterButton">
+          Compartilhar no Twitter <FaTwitter />
+        </button>
+
+        <button
+          type="button"
+          id="closeModal"
+          onClick={() => closeLevelUpModal()}
+        >
           <CloseIcon />
         </button>
       </Container>
