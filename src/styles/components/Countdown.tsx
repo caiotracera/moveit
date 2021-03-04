@@ -40,6 +40,7 @@ export const Container = styled.div`
 
       height: 4px;
       background: var(--green);
+      transition: width 0.2s;
     }
 
     &:disabled {
