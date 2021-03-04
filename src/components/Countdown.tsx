@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { FiX, FiPlay } from 'react-icons/fi'
 
 import { CountdownContext } from '../contexts/CountdownContext'
 import { Container, CountDownContainer } from '../styles/components/Countdown'
@@ -40,11 +41,11 @@ export function Countdown() {
               onClick={resetCountdown}
               className="countdownButtonActive"
             >
-              Abandonar ciclo
+              Abandonar ciclo <FiX width={14} height={14} />
             </button>
           ) : (
             <button type="button" onClick={startCountdown}>
-              Iniciar um ciclo
+              Iniciar um ciclo <FiPlay width={14} height={14} />
             </button>
           )}
         </>

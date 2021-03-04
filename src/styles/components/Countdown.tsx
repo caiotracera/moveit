@@ -21,6 +21,10 @@ export const Container = styled.div`
     font-weight: 600;
     transition: background-color 0.2s;
 
+    svg {
+      margin-left: 1rem;
+    }
+
     &:disabled {
       background: var(--white);
       color: var(--text);
