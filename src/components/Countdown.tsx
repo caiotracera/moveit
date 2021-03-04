@@ -6,6 +6,7 @@ import { Container, CountDownContainer } from '../styles/components/Countdown'
 
 export function Countdown() {
   const {
+    timeLeftInPercent,
     minutes,
     seconds,
     hasFinished,
@@ -16,6 +17,8 @@ export function Countdown() {
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
+
+  console.log(timeLeftInPercent)
 
   return (
     <Container>
@@ -41,11 +44,19 @@ export function Countdown() {
               onClick={resetCountdown}
               className="countdownButtonActive"
             >
-              Abandonar ciclo <FiX width={14} height={14} />
+              <span>
+                Abandonar ciclo <FiX width={14} height={14} />
+              </span>
+              <div
+                className="timeLeftBar"
+                style={{ width: `${timeLeftInPercent}%` }}
+              />
             </button>
           ) : (
             <button type="button" onClick={startCountdown}>
-              Iniciar um ciclo <FiPlay width={14} height={14} />
+              <span>
+                Iniciar um ciclo <FiPlay width={14} height={14} />
+              </span>
             </button>
           )}
         </>

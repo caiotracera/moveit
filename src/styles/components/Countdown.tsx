@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   button {
+    position: relative;
     width: 100%;
     height: 5rem;
 
     margin-top: 2rem;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -21,8 +23,23 @@ export const Container = styled.div`
     font-weight: 600;
     transition: background-color 0.2s;
 
-    svg {
-      margin-left: 1rem;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        margin-left: 1rem;
+      }
+    }
+
+    .timeLeftBar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      height: 4px;
+      background: var(--green);
     }
 
     &:disabled {
