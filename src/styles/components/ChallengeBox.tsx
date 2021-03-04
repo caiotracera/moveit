@@ -6,7 +6,6 @@ export const Container = styled.div`
   background: var(--white);
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem 2rem;
 
   display: flex;
   flex-direction: column;
@@ -19,6 +18,7 @@ export const ChallengeNotActive = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem 2rem;
 
   strong {
     font-size: 1.5rem;
@@ -57,11 +57,12 @@ export const ChallengeActive = styled.div`
     color: var(--blue);
     font-weight: 600;
     font-size: 1.25rem;
-    padding: 0 2rem 1.5rem;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--gray-line);
   }
 
   main {
+    padding: 1.5rem 2rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -82,34 +83,49 @@ export const ChallengeActive = styled.div`
   }
 
   footer {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
 
     button {
-      height: 3rem;
+      height: 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
 
       border: 0;
-      border-radius: 5px;
+      border-top: 1px solid var(--gray-line);
 
-      color: var(--white);
-      font-size: 1rem;
+      &:first-child {
+        border-right: 1px solid var(--gray-line);
+      }
+
+      &:last-child {
+        border-left: 1px solid var(--gray-line);
+      }
+
+      font-size: 1.25rem;
       font-weight: 600;
-      transition: filter 0.2s;
+      transition: all 0.2s;
 
       &.challengeFailedButton {
-        background: var(--red);
+        color: var(--red);
+        background: var(--fail-red);
+
+        &:hover {
+          background: var(--red);
+          color: var(--white);
+        }
       }
 
       &.challengeSucceededButton {
-        background: var(--green);
-      }
+        color: var(--green);
+        background: var(--success-green);
 
-      &:hover {
-        filter: brightness(0.9);
+        &:hover {
+          background: var(--green);
+          color: var(--white);
+        }
       }
     }
   }
