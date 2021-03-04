@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { FiX, FiPlay } from 'react-icons/fi'
+import { FaCheckCircle } from 'react-icons/fa'
 
 import { CountdownContext } from '../contexts/CountdownContext'
 import { Container, CountDownContainer } from '../styles/components/Countdown'
@@ -35,7 +36,12 @@ export function Countdown() {
       </CountDownContainer>
 
       {hasFinished ? (
-        <button disabled>Ciclo encerrado</button>
+        <button disabled>
+          <span>
+            Ciclo encerrado
+            <FaCheckCircle color={'var(--green)'} width={14} height={14} />
+          </span>
+        </button>
       ) : (
         <>
           {isActive ? (
