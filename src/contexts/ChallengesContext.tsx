@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 
-import { LevelUpModal } from '../components/LevelUpModel'
+import { LevelUpModal } from '../components/LevelUpModal'
 import challenges from '../assets/data/challenges.json'
 
 type Challenge = {
