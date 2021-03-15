@@ -1,5 +1,4 @@
 import puppeteer, { Page } from 'puppeteer-core'
-
 import { getOptions } from './chromeOptions'
 let _page: Page | null
 
@@ -27,9 +26,5 @@ export async function getScreenshot(
 
   const file = await page.screenshot({ type: 'png' })
 
-  if (!file) {
-    throw new Error('Error while generating screenshot')
-  } else {
-    return file as Buffer
-  }
+  return file as Buffer
 }
