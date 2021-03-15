@@ -17,7 +17,6 @@ export const Container = styled.div`
   background: var(--white);
   width: 100%;
   max-width: 400px;
-  padding: 2rem 3rem;
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -42,7 +41,7 @@ export const Container = styled.div`
     margin-top: 0.25rem;
   }
 
-  button {
+  button#closeModal {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
@@ -50,4 +49,35 @@ export const Container = styled.div`
     border: 0;
     font-size: 0;
   }
+
+  button#twitterButton {
+    width: 100%;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-top: 1px solid var(--gray-line);
+
+    background: var(--twitter);
+    color: var(--blue-twitter);
+    transition: all 0.2s;
+
+    font-size: 20px;
+
+    svg {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      background: var(--blue-twitter);
+      color: var(--white);
+    }
+  }
+`
+
+export const Content = styled.div`
+  padding: 2rem 3rem;
 `
