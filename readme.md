@@ -78,10 +78,10 @@ $ npm run start # Initiate the project at http://localhost:3000/
 - [ ] Add PWA
 - [ ] Make a dark mode
 - [ ] Login using Github OAuth
-- [ ] Timer under "Encerrar ciclo" button
+- [x] Timer under "Encerrar ciclo" button
 - [ ] Leaderboard
-- [ ] "Falhei" and "Completei" buttons
-- [ ] Share in twitter button and image
+- [x] "Falhei" and "Completei" buttons
+- [x] Share in twitter button and image
 
 # :memo: License
 
