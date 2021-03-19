@@ -39,14 +39,14 @@ export default function Banner(props: BannerProps) {
   )
 }
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies
+  const { level, challengesCompleted } = ctx.req.cookies
 
   return {
     props: {
       url: await getBanner({
         level: Number(level),
         challengesCompleted: Number(challengesCompleted),
-        currentExperience: Number(currentExperience)
+        currentExperience: Math.pow(Number(level) * 4, 2)
       })
     }
   }
